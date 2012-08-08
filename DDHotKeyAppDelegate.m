@@ -45,7 +45,6 @@
 		[self addOutput:@"Registered hotkey for example 1"];
 		[self addOutput:[NSString stringWithFormat:@"Registered: %@", [c registeredHotKeys]]];
 	}
-	[c release];
 }
 
 - (IBAction) registerExample2:(id)sender {
@@ -57,7 +56,6 @@
 		[self addOutput:@"Registered hotkey for example 2"];
 		[self addOutput:[NSString stringWithFormat:@"Registered: %@", [c registeredHotKeys]]];
 	}
-	[c release];
 }
 
 - (IBAction) registerExample3:(id)sender {
@@ -76,7 +74,6 @@
 		[self addOutput:@"Registered hotkey for example 3"];
 		[self addOutput:[NSString stringWithFormat:@"Registered: %@", [c registeredHotKeys]]];
 	}
-	[c release];
 #else
 	NSRunAlertPanel(@"Blocks not available", @"This example requires the 10.6 SDK", @"OK", nil, nil);
 #endif
@@ -86,21 +83,18 @@
 	DDHotKeyCenter * c = [[DDHotKeyCenter alloc] init];
 	[c unregisterHotKeyWithKeyCode:9 modifierFlags:NSControlKeyMask];
 	[self addOutput:@"Unregistered hotkey for example 1"];
-	[c release];
 }
 
 - (IBAction) unregisterExample2:(id)sender {
 	DDHotKeyCenter * c = [[DDHotKeyCenter alloc] init];
 	[c unregisterHotKeyWithKeyCode:9 modifierFlags:(NSControlKeyMask | NSAlternateKeyMask)];
 	[self addOutput:@"Unregistered hotkey for example 2"];
-	[c release];
 }
 
 - (IBAction) unregisterExample3:(id)sender {
 	DDHotKeyCenter * c = [[DDHotKeyCenter alloc] init];
 	[c unregisterHotKeyWithKeyCode:9 modifierFlags:(NSControlKeyMask | NSAlternateKeyMask | NSCommandKeyMask)];
 	[self addOutput:@"Unregistered hotkey for example 3"];
-	[c release];
 }
 
 @end
